@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recensioni - Metodo Underdog</title>
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Personalizzato -->
+    <style>
+        /* Reset di base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header */
+        #main-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #main-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        #main-header p {
+            font-size: 1.2em;
+            color: #555;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Recensioni */
+        #reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .recensione {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recensione:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .recensione-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .nome {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        .stelle i {
+            color: gold;
+            margin-left: 2px;
+            transition: color 0.3s;
+        }
+
+        .stelle i.far.fa-star {
+            color: #ccc;
+        }
+
+        .testo-recensione {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #555;
+            animation: slideInLeft 0.5s ease-out;
+        }
+
+        .traduzione {
+            font-size: 0.9em;
+            color: #777;
+            font-style: italic;
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        /* Footer */
+        #main-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #777;
+        }
+
+        /* Animazioni */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #main-header h1 {
+                font-size: 2em;
+            }
+
+            #main-header p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .recensione {
+                padding: 15px;
+            }
+
+            .nome {
+                font-size: 1em;
+            }
+
+            .testo-recensione {
+                font-size: 0.95em;
+            }
+
+            .traduzione {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <h1>Recensioni - Metodo Underdog</h1>
+        <p>Il metodo "Underdog" consente di guadagnare fino a 10.000 € in un mese. Leggi le esperienze di chi l'ha provato!</p>
+    </header>
+
+    <main id="reviews-container">
+        <!-- Inizio delle 37 recensioni -->
+
+        <!-- Recensione 1 -->
+        <div class="recensione" id="recensione-1">
+            <div class="recensione-header">
+                <span class="nome">Johann M.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit einem Startbudget von 1.000 € habe ich in einem Monat 8.200 € verdient. Unglaublich präzise Vorhersagen!"</p>
+            <p class="traduzione">"Con un budget iniziale di 1.000 €, ho guadagnato 8.200 € in un mese. Previsioni incredibilmente precise!"</p>
+        </div>
+
+        <!-- Recensione 2 -->
+        <div class="recensione" id="recensione-2">
+            <div class="recensione-header">
+                <span class="nome">Lukas H.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Ich begann mit einem Budget von 700 € und habe 3.500 € verdient. Gute Methode, aber nicht immer perfekt."</p>
+            <p class="traduzione">"Ho iniziato con un budget di 700 € e ho guadagnato 3.500 €. Buon metodo, ma non sempre perfetto."</p>
+        </div>
+
+        <!-- Recensione 3 -->
+        <div class="recensione" id="recensione-3">
+            <div class="recensione-header">
+                <span class="nome">Maximilian F.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit einem Budget von 2.000 € habe ich in einem Monat 9.900 € verdient. Dieses System ist das Beste!"</p>
+            <p class="traduzione">"Con un budget di 2.000 €, ho guadagnato 9.900 € in un mese. Questo sistema è il migliore!"</p>
+        </div>
+
+        <!-- Recensione 4 -->
+        <div class="recensione" id="recensione-4">
+            <div class="recensione-header">
+                <span class="nome">Sebastian W.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit einem Startbudget von 500 € habe ich 1.200 € verdient. Gutes System, aber könnte präziser sein."</p>
+            <p class="traduzione">"Con un budget iniziale di 500 €, ho guadagnato 1.200 €. Buon sistema, ma potrebbe essere più preciso."</p>
+        </div>
+
+        <!-- Recensione 5 -->
+        <div class="recensione" id="recensione-5">
+            <div class="recensione-header">
+                <span class="nome">Felix K.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.500 € habe ich in einem Monat 7.800 € verdient. Absolut zuverlässig und lohnend."</p>
+            <p class="traduzione">"Con 1.500 €, ho guadagnato 7.800 € in un mese. Assolutamente affidabile e conveniente."</p>
+        </div>
+
+        <!-- Recensione 6 -->
+        <div class="recensione" id="recensione-6">
+            <div class="recensione-header">
+                <span class="nome">Niklas Z.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Ich habe mit 800 € begonnen und 3.900 € gewonnen. Die Vorhersagen waren meistens korrekt."</p>
+            <p class="traduzione">"Ho iniziato con 800 €, ho guadagnato 3.900 €. Le previsioni erano per lo più corrette."</p>
+        </div>
+
+        <!-- Recensione 7 -->
+        <div class="recensione" id="recensione-7">
+            <div class="recensione-header">
+                <span class="nome">Elias T.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit einem Startkapital von 600 € habe ich 1.400 € verdient. Es gibt Raum für Verbesserungen."</p>
+            <p class="traduzione">"Con un capitale iniziale di 600 €, ho guadagnato 1.400 €. C'è spazio per miglioramenti."</p>
+        </div>
+
+        <!-- Recensione 8 -->
+        <div class="recensione" id="recensione-8">
+            <div class="recensione-header">
+                <span class="nome">Julian G.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Ich habe mit 2.000 € begonnen und 10.000 € gewonnen. Ich empfehle es jedem, der ernsthaft Geld verdienen möchte!"</p>
+            <p class="traduzione">"Ho iniziato con 2.000 €, ho guadagnato 10.000 €. Lo consiglio a chiunque voglia guadagnare seriamente!"</p>
+        </div>
+
+        <!-- Recensione 9 -->
+        <div class="recensione" id="recensione-9">
+            <div class="recensione-header">
+                <span class="nome">Tim P.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit einem Budget von 1.200 € habe ich 4.800 € verdient. Ein paar Fehler, aber insgesamt ein gutes System."</p>
+            <p class="traduzione">"Con un budget di 1.200 €, ho guadagnato 4.800 €. Alcuni errori, ma nel complesso un buon sistema."</p>
+        </div>
+
+        <!-- Recensione 10 -->
+        <div class="recensione" id="recensione-10">
+            <div class="recensione-header">
+                <span class="nome">Paul B.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Ich habe mit 1.800 € begonnen und 9.800 € gewonnen. Fantastisches Ergebnis!"</p>
+            <p class="traduzione">"Ho iniziato con 1.800 €, ho guadagnato 9.800 €. Risultato fantastico!"</p>
+        </div>
+
+        <!-- Recensione 11 -->
+        <div class="recensione" id="recensione-11">
+            <div class="recensione-header">
+                <span class="nome">Moritz S.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.000 € Startkapital habe ich 5.000 € verdient. Sehr zufrieden!"</p>
+            <p class="traduzione">"Con 1.000 € di capitale iniziale, ho guadagnato 5.000 €. Molto soddisfatto!"</p>
+        </div>
+
+        <!-- Recensione 12 -->
+        <div class="recensione" id="recensione-12">
+            <div class="recensione-header">
+                <span class="nome">Jonas E.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 2.500 € habe ich 9.500 € in 30 Tagen verdient. Absolut empfehlenswert."</p>
+            <p class="traduzione">"Con 2.500 €, ho guadagnato 9.500 € in 30 giorni. Assolutamente consigliato."</p>
+        </div>
+
+        <!-- Recensione 13 -->
+        <div class="recensione" id="recensione-13">
+            <div class="recensione-header">
+                <span class="nome">David L.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit einem Budget von 700 € habe ich 3.300 € verdient. Gute Methode mit Potenzial."</p>
+            <p class="traduzione">"Con un budget di 700 €, ho guadagnato 3.300 €. Buon metodo con potenziale."</p>
+        </div>
+
+        <!-- Recensione 14 -->
+        <div class="recensione" id="recensione-14">
+            <div class="recensione-header">
+                <span class="nome">Leon F.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.500 € habe ich in wenigen Wochen 8.500 € verdient. Unglaublich präzise."</p>
+            <p class="traduzione">"Con 1.500 €, ho guadagnato 8.500 € in poche settimane. Incredibilmente preciso."</p>
+        </div>
+
+        <!-- Recensione 15 -->
+        <div class="recensione" id="recensione-15">
+            <div class="recensione-header">
+                <span class="nome">Samuel D.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Ich begann mit 500 € und habe 1.100 € gewonnen. Könnte genauer sein."</p>
+            <p class="traduzione">"Ho iniziato con 500 €, ho guadagnato 1.100 €. Potrebbe essere più preciso."</p>
+        </div>
+
+        <!-- Recensione 16 -->
+        <div class="recensione" id="recensione-16">
+            <div class="recensione-header">
+                <span class="nome">Florian K.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 800 € Startkapital habe ich 3.500 € verdient. Gute Ergebnisse."</p>
+            <p class="traduzione">"Con un capitale iniziale di 800 €, ho guadagnato 3.500 €. Buoni risultati."</p>
+        </div>
+
+        <!-- Recensione 17 -->
+        <div class="recensione" id="recensione-17">
+            <div class="recensione-header">
+                <span class="nome">Patrick B.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.200 € habe ich 7.200 € gewonnen. Dieses System ist unglaublich gut."</p>
+            <p class="traduzione">"Con 1.200 €, ho guadagnato 7.200 €. Questo sistema è incredibilmente buono."</p>
+        </div>
+
+        <!-- Recensione 18 -->
+        <div class="recensione" id="recensione-18">
+            <div class="recensione-header">
+                <span class="nome">Marco R.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Con un investimento iniziale di 1.000 €, ho ottenuto un ritorno di 6.500 €. Ottimo metodo con qualche miglioramento possibile."</p>
+            <p class="traduzione">"Con un investimento iniziale di 1.000 €, ho ottenuto un ritorno di 6.500 €. Ottimo metodo con qualche miglioramento possibile."</p>
+        </div>
+
+        <!-- Recensione 19 -->
+        <div class="recensione" id="recensione-19">
+            <div class="recensione-header">
+                <span class="nome">Alexander S.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit einem Budget von 900 € habe ich 4.000 € verdient. Sehr zufrieden mit den Ergebnissen."</p>
+            <p class="traduzione">"Con un budget di 900 €, ho guadagnato 4.000 €. Molto soddisfatto dei risultati."</p>
+        </div>
+
+        <!-- Recensione 20 -->
+        <div class="recensione" id="recensione-20">
+            <div class="recensione-header">
+                <span class="nome">Thomas M.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.700 € habe ich 8.000 € in einem Monat verdient. Hervorragendes System!"</p>
+            <p class="traduzione">"Con 1.700 €, ho guadagnato 8.000 € in un mese. Sistema eccellente!"</p>
+        </div>
+
+        <!-- Recensione 21 -->
+        <div class="recensione" id="recensione-21">
+            <div class="recensione-header">
+                <span class="nome">Laura S.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Ich habe mit 600 € begonnen und 2.500 € verdient. Effizient und zuverlässig."</p>
+            <p class="traduzione">"Ho iniziato con 600 €, ho guadagnato 2.500 €. Efficiente e affidabile."</p>
+        </div>
+
+        <!-- Recensione 22 -->
+        <div class="recensione" id="recensione-22">
+            <div class="recensione-header">
+                <span class="nome">Stefan K.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit einem Startbudget von 1.100 € habe ich 5.600 € verdient. Sehr empfehlenswert."</p>
+            <p class="traduzione">"Con un budget iniziale di 1.100 €, ho guadagnato 5.600 €. Molto consigliato."</p>
+        </div>
+
+        <!-- Recensione 23 -->
+        <div class="recensione" id="recensione-23">
+            <div class="recensione-header">
+                <span class="nome">Sven B.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 750 € habe ich 3.200 € verdient. Gutes Potenzial, leicht zu verstehen."</p>
+            <p class="traduzione">"Con 750 €, ho guadagnato 3.200 €. Buon potenziale, facile da capire."</p>
+        </div>
+
+        <!-- Recensione 24 -->
+        <div class="recensione" id="recensione-24">
+            <div class="recensione-header">
+                <span class="nome">Daniel G.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 2.200 € habe ich 10.000 € verdient. Fantastisches Ergebnis und Support."</p>
+            <p class="traduzione">"Con 2.200 €, ho guadagnato 10.000 €. Risultato fantastico e supporto."</p>
+        </div>
+
+        <!-- Recensione 25 -->
+        <div class="recensione" id="recensione-25">
+            <div class="recensione-header">
+                <span class="nome">Mia T.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.300 € habe ich 6.500 € verdient. Sehr zufrieden mit den Ergebnissen."</p>
+            <p class="traduzione">"Con 1.300 €, ho guadagnato 6.500 €. Molto soddisfatto dei risultati."</p>
+        </div>
+
+        <!-- Recensione 26 -->
+        <div class="recensione" id="recensione-26">
+            <div class="recensione-header">
+                <span class="nome">Kevin L.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.600 € habe ich 7.900 € verdient. Effizientes System mit großartigen Ergebnissen."</p>
+            <p class="traduzione">"Con 1.600 €, ho guadagnato 7.900 €. Sistema efficiente con risultati eccellenti."</p>
+        </div>
+
+        <!-- Recensione 27 -->
+        <div class="recensione" id="recensione-27">
+            <div class="recensione-header">
+                <span class="nome">Claus F.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 850 € habe ich 3.700 € verdient. Sehr gutes Verhältnis zwischen Risiko und Gewinn."</p>
+            <p class="traduzione">"Con 850 €, ho guadagnato 3.700 €. Ottimo rapporto tra rischio e guadagno."</p>
+        </div>
+
+        <!-- Recensione 28 -->
+        <div class="recensione" id="recensione-28">
+            <div class="recensione-header">
+                <span class="nome">Fabian H.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 2.000 € habe ich 9.500 € verdient. Hervorragende Performance und Support."</p>
+            <p class="traduzione">"Con 2.000 €, ho guadagnato 9.500 €. Eccellente performance e supporto."</p>
+        </div>
+
+        <!-- Recensione 29 -->
+        <div class="recensione" id="recensione-29">
+            <div class="recensione-header">
+                <span class="nome">Isabella C.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 950 € habe ich 4.100 € verdient. Sehr zufrieden mit der Genauigkeit der Vorhersagen."</p>
+            <p class="traduzione">"Con 950 €, ho guadagnato 4.100 €. Molto soddisfatto della precisione delle previsioni."</p>
+        </div>
+
+        <!-- Recensione 30 -->
+        <div class="recensione" id="recensione-30">
+            <div class="recensione-header">
+                <span class="nome">Luca D.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.400 € habe ich 7.000 € verdient. Ein fantastisches System, das hält, was es verspricht."</p>
+            <p class="traduzione">"Con 1.400 €, ho guadagnato 7.000 €. Un sistema fantastico, che mantiene ciò che promette."</p>
+        </div>
+
+        <!-- Recensione 31 -->
+        <div class="recensione" id="recensione-31">
+            <div class="recensione-header">
+                <span class="nome">Elena S.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.000 € habe ich 5.500 € verdient. Sehr gutes System mit klaren Anweisungen."</p>
+            <p class="traduzione">"Con 1.000 €, ho guadagnato 5.500 €. Sistema molto buono con istruzioni chiare."</p>
+        </div>
+
+        <!-- Recensione 32 -->
+        <div class="recensione" id="recensione-32">
+            <div class="recensione-header">
+                <span class="nome">Andreas P.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 700 € habe ich 3.600 € verdient. Sehr zufrieden mit der Benutzerfreundlichkeit."</p>
+            <p class="traduzione">"Con 700 €, ho guadagnato 3.600 €. Molto soddisfatto della facilità d'uso."</p>
+        </div>
+
+        <!-- Recensione 33 -->
+        <div class="recensione" id="recensione-33">
+            <div class="recensione-header">
+                <span class="nome">Michele B.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.100 € habe ich 6.800 € verdient. Sehr gutes Verhältnis zwischen Risiko und Ertrag."</p>
+            <p class="traduzione">"Con 1.100 €, ho guadagnato 6.800 €. Ottimo rapporto tra rischio e rendimento."</p>
+        </div>
+
+        <!-- Recensione 34 -->
+        <div class="recensione" id="recensione-34">
+            <div class="recensione-header">
+                <span class="nome">Giulio V.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 1.800 € habe ich 8.500 € verdient. Ein hervorragendes System mit zuverlässigen Ergebnissen."</p>
+            <p class="traduzione">"Con 1.800 €, ho guadagnato 8.500 €. Un sistema eccellente con risultati affidabili."</p>
+        </div>
+
+        <!-- Recensione 35 -->
+        <div class="recensione" id="recensione-35">
+            <div class="recensione-header">
+                <span class="nome">Leonardo R.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 900 € habe ich 4.500 € verdient. Sehr gute Ergebnisse in kurzer Zeit."</p>
+            <p class="traduzione">"Con 900 €, ho guadagnato 4.500 €. Molti buoni risultati in poco tempo."</p>
+        </div>
+
+        <!-- Recensione 36 -->
+        <div class="recensione" id="recensione-36">
+            <div class="recensione-header">
+                <span class="nome">Claus N.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Mit 2.500 € habe ich 10.500 € verdient. Einfach zu bedienen und sehr effektiv."</p>
+            <p class="traduzione">"Con 2.500 €, ho guadagnato 10.500 €. Facile da usare e molto efficace."</p>
+        </div>
+
+        <!-- Recensione 37 -->
+        <div class="recensione" id="recensione-37">
+            <div class="recensione-header">
+                <span class="nome">Marco R.</span>
+                <span class="stelle">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </span>
+            </div>
+            <p class="testo-recensione">"Con un investimento iniziale di 1.000 €, ho ottenuto un ritorno di 6.500 €. Ottimo metodo con qualche miglioramento possibile."</p>
+            <p class="traduzione">"Con un investimento iniziale di 1.000 €, ho ottenuto un ritorno di 6.500 €. Ottimo metodo con qualche miglioramento possibile."</p>
+        </div>
+
+    </main>
+
+    <footer id="main-footer">
+        <p>&copy; 2024 Metodo Underdog. Tutti i diritti riservati.</p>
+    </footer>
+
+    <!-- JavaScript Personalizzato -->
+    <script>
+        // Effetto hover per cambiare il colore di sfondo
+        document.addEventListener('DOMContentLoaded', () => {
+            const recensioni = document.querySelectorAll('.recensione');
+
+            recensioni.forEach(recensione => {
+                recensione.addEventListener('mouseenter', () => {
+                    recensione.style.backgroundColor = '#e8f4fd';
+                });
+
+                recensione.addEventListener('mouseleave', () => {
+                    recensione.style.backgroundColor = '#fff';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
